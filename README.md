@@ -7,11 +7,7 @@ Final INFO 201 Project: Ziyang Liu, Snehal Shokeen, & Valerie Tse
  We are interested in Airbnb because everyone in the group has used and enjoyed the service. We are also interested in exploring how the tourist accommodation market, which has been dominated by hotels, hostels, and motels, and pricing have changed overtime, since it has become much more accessible to a larger audience of people. Services such as Uber, Doordash, Fiverr, where individuals offer services is only something that has come about relatively recently, and as one of the most prominent ‘brokers’, our group believes it is important to find the impact Airbnb will have on the future.
 
 2. **What other examples of data driven project have you found related to this domain (share at least 3)?**
-We found a project which tried to compare the locations of Airbnb listings to the number of evictions in the San Francisco Area ([Link](http://www.antievictionmappingproject.net/airbnbmap.html)).
-
-Another project we found mapped out October 2015 Airbnb listings in Tokyo with information on their reviews, price, and links to the listing ([Link](https://fusiontables.google.com/DataSource?docid=19kUwpdecsv40yNlEpjxJQa3V0U_PDdRpwSvAjNSP#map:id=3)).
-
-Another project had a visual map of October 2014 Airbnb listings in Portland with information on their prices and estimated listing price of the entire building ([Link](https://fusiontables.google.com/DataSource?docid=13BbmK0RNt-lkfxITikQPDpGZyL9EfMTxd1owCOll#map:id=3)).
+We found a project which tried to compare the locations of Airbnb listings to the number of evictions in the San Francisco Area ([Link](http://www.antievictionmappingproject.net/airbnbmap.html)). Another project we found mapped out October 2015 Airbnb listings in Tokyo with information on their reviews, price, and links to the listing ([Link](https://fusiontables.google.com/DataSource?docid=19kUwpdecsv40yNlEpjxJQa3V0U_PDdRpwSvAjNSP#map:id=3)). Another project had a visual map of October 2014 Airbnb listings in Portland with information on their prices and estimated listing price of the entire building ([Link](https://fusiontables.google.com/DataSource?docid=13BbmK0RNt-lkfxITikQPDpGZyL9EfMTxd1owCOll#map:id=3)).
 
 3. **What data-driven questions do you hope to answer about this domain (share at least 3)?**
   - How does the average price for one night at an Airbnb compare between cities? We could compare the median prices of listings in a specific city versus another city's.
