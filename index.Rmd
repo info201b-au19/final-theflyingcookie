@@ -1,6 +1,24 @@
 ---
-title: "Project Brainstorm"
+title: "Midpoint Deliverable"
 author: "Snehal S, Bernard L, Val T, Sasha G, Lewis."
-date: "10/4/2019"
+date: "11/14/2019"
 output: html_document
 ---
+
+```{r include=FALSE}
+
+
+source("map.R")
+
+```
+
+
+
+
+# Chart Map
+
+```{r echo=FALSE}
+NYC_map
+
+```
+
