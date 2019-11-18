@@ -10,17 +10,25 @@ output: html_document
 
 source("scripts/map.R")
 source("scripts/Summary_Info.R")
+source("scripts/pie_chart.R")
 
 ```
-# Summary Information
+
+## Introdcution
+
+
+## Summary Information
 
 The NYC dataset has over **`r nrows`** observations recording over **`r ncol`** features for each house that hosted Airbnb guests in 2019. Among the features are room type, price, host name, and so on. According to the dataset, **`r num_Private_rooms`** private rooms, **`r num_Entire_homes`** Entire homes/apts, and **`r num_Shared_rooms`** shared rooms were hosted in 2019. The most expensive of them being **`r max_price`** and the least expensive being **`r min_price`**. Note that some airbnb housese can claim to have zero dollars in price per night because they don't charge per night, rather by week or month. The most popular neighbourhood is **`r most_popular_neighbourhood`**, while the most popular neighbourhood group is **`r most_popular_neighbourhood_group`**. Lastly, the sum of all reviews posted to Airbnb in 2019 is **`r total_reviews`**.
 
 
+## Summary Table
 
-# Chart Map
+## Charts
 
-**Purpose:** This chart was intended to show the distribution of Airbnb-hosted houses in New York City to expand the user's perspective of which neighbourhoods seem to dominate the real estate market (in terms of temperoray renting). 
+### Chart Map
+
+**Purpose**: This chart was intended to show the distribution of Airbnb-hosted houses in New York City to expand the user's perspective of which neighbourhoods seem to dominate the real estate market (in terms of temperoray renting). 
 
 ```{r echo=FALSE}
 NYC_map
@@ -32,8 +40,16 @@ NYC_map
 - The popup labels reveal that house prices in densely populated Airbnb markets, *on average*, are much higher compared to regions with fewer Airbnb houses for guests.
 
 
+### Donut Pie Chart
 
+**Purpose**: This chart is intended to show the portion of types of different rooms on Airbnb in New York City. A pie chart is very useful in this situation because it gives people a intuative way to understand the proportion of different room types.
 
+```{r echo=FALSE}
+nyc_pie
+```
+
+**Insights:**
+- The number of entire home/apt is almost the same as private room. And the proportion of shared rooms is very small. It might be a result that most people go to New York City wish to live in a private space.
 
 
 
