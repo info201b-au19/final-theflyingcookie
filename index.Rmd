@@ -52,7 +52,9 @@ NYC_map
 ```
 
 **Insights:**
+
 - It appeats that houses closer to a coast or near central NY appear to dominate the map. Perhaps because people are attracted to the view.
+
 - The popup labels reveal that house prices in densely populated Airbnb markets, *on average*, are much higher compared to regions with fewer Airbnb houses for guests.
 
 
