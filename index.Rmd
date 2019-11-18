@@ -11,18 +11,24 @@ source("scripts/map.R")
 source("scripts/Summary_Info.R")
 source("scripts/pie_chart.R")
 source("scripts/aggregate_table.R")
+source("scripts/bar_graph.R")
 
 ```
 
 ## Introduction
 
+- The purpose of this project is to evaluate how Airbnb listing information compares within NYC. Since Airbnb is gaining marketshare in the tourist accommodation market, which has been dominated by hotels, hostels, and motels in the past, and pricing have changed overtime, our group believes it is important to find the impact Airbnb will have on the future.
+
+- **Dataset Source:** [Kaggle](https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data)
 
 ## Summary Information
 
 The NYC dataset has over **`r nrows`** observations recording over **`r ncol`** features for each house that hosted Airbnb guests in 2019. Among the features are room type, price, host name, and so on. According to the dataset, **`r num_Private_rooms`** private rooms, **`r num_Entire_homes`** Entire homes/apts, and **`r num_Shared_rooms`** shared rooms were hosted in 2019. The most expensive of them being **`r max_price`** and the least expensive being **`r min_price`**. Note that some airbnb housese can claim to have zero dollars in price per night because they don't charge per night, rather by week or month. The most popular neighbourhood is **`r most_popular_neighbourhood`**, while the most popular neighbourhood group is **`r most_popular_neighbourhood_group`**. Lastly, the sum of all reviews posted to Airbnb in 2019 is **`r total_reviews`**.
 
-
 ## Summary Table
+
+This table investigates and compares how the average Airbnb listing information such as price, number of minimum nights required, and room availability out of 365 days compares between different NYC neighborhoods. In order to make this comparison, the listing was grouped by neighborhoods.
+
 ```{r echo=FALSE}
 kable(aggregate_table,
   col.names =
@@ -35,9 +41,26 @@ kable(aggregate_table,
 )
 ```
 
+**Interpretations & Insights:**
+
+- The highest average price for a room is in Manhattan for a whopping $196.88 while the lowest is in Bronx for $87.50.
+- The largest average minimum of nights required for a room is in Manhattan with 8.6 days while the lowest is in Bronx with 4.6 days.
+- The average room availability out of 365 days is the highest in Staten Island with 199.7 days while the lowest is in Brooklyn with 100.2 dats.
+
 ## Charts
 
 ### Bar Chart
+**Purpose**: This chart was meant to visually inform the viewer of how the number of Airbnb listings vary per neighborhood. Using a bar chart can help allow the viewer to easily contrast the different number of listings between neighborhoods.
+
+```{r echo=FALSE}
+bar_graph_NYC
+
+```
+
+**Insights:**
+
+- The neighborhood group with the most number of Airbnb listings is Manhattan with about *22,500~* listings. Brooklyn comes in close for 2nd with about *20,000~* listings.
+- The neighborhood group with the least number of Airbnb listings is Staten Island with about *1,000~* listings.
 
 ### Chart Map
 
@@ -49,9 +72,9 @@ NYC_map
 ```
 
 **Insights:**
-- It appeats that houses closer to a coast or near central NY appear to dominate the map. Perhaps because people are attracted to the view.
-- The popup labels reveal that house prices in densely populated Airbnb markets, *on average*, are much higher compared to regions with fewer Airbnb houses for guests.
 
+- It appears that houses closer to a coast or near central NY appear to dominate the map. Perhaps because people are attracted to the view.
+- The popup labels reveal that house prices in densely populated Airbnb markets, *on average*, are much higher compared to regions with fewer Airbnb houses for guests.
 
 ### Donut Pie Chart
 
@@ -62,4 +85,6 @@ nyc_pie
 ```
 
 **Insights:**
-- The number of entire home/apt is almost the same as private room. And the proportion of shared rooms is very small. It might be a result that most people go to New York City wish to live in a private space.
+
+- The number of entire home/apt listings is almost the same as the number of private room listings. 
+- The proportion of shared rooms listings is very small. It might be a result of most people going to New York City wishing to live in a private space.
