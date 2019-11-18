@@ -8,8 +8,8 @@ output: html_document
 ```{r include=FALSE}
 
 
-source("map.R")
-source("Summary_Info.R")
+source("scripts/map.R")
+source("scripts/Summary_Info.R")
 
 ```
 # Summary Information
