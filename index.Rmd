@@ -12,6 +12,8 @@ source("map.R")
 source("Summary_Info.R")
 
 ```
+
+
 # Summary Information
 
 The NYC dataset has over **`r nrows`** observations recording over **`r ncol`** features for each house that hosted Airbnb guests in 2019. Among the features are room type, price, host name, and so on. According to the dataset, **`r num_Private_rooms`** private rooms, **`r num_Entire_homes`** Entire homes/apts, and **`r num_Shared_rooms`** shared rooms were hosted in 2019. The most expensive of them being **`r max_price`** and the least expensive being **`r min_price`**. Note that some airbnb housese can claim to have zero dollars in price per night because they don't charge per night, rather by week or month. The most popular neighbourhood is **`r most_popular_neighbourhood`**, while the most popular neighbourhood group is **`r most_popular_neighbourhood_group`**. Lastly, the sum of all reviews posted to Airbnb in 2019 is **`r total_reviews`**.
