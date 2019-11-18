@@ -1,20 +1,20 @@
 ---
 title: "Midpoint Deliverable"
-author: "Snehal S, Bernard L, Val T, Sasha G, Lewis."
+author: "Snehal S, Bernard L, Valerie T, Sasha G, Lewis."
 date: "11/14/2019"
 output: html_document
 ---
 
 ```{r include=FALSE}
 
-
 source("scripts/map.R")
 source("scripts/Summary_Info.R")
 source("scripts/pie_chart.R")
+source("scripts/aggregate_table.R")
 
 ```
 
-## Introdcution
+## Introduction
 
 
 ## Summary Information
@@ -23,8 +23,21 @@ The NYC dataset has over **`r nrows`** observations recording over **`r ncol`** 
 
 
 ## Summary Table
+```{r echo=FALSE}
+kable(aggregate_table,
+  col.names =
+    c(
+      "Neighborhood Area",
+      "Average Price for a Room ($ USD)",
+      "Average Minimum of Nights Required for a Room",
+      "Average Room Availability out of 365 Days (Days)"
+    )
+)
+```
 
 ## Charts
+
+### Bar Chart
 
 ### Chart Map
 
@@ -50,14 +63,3 @@ nyc_pie
 
 **Insights:**
 - The number of entire home/apt is almost the same as private room. And the proportion of shared rooms is very small. It might be a result that most people go to New York City wish to live in a private space.
-
-
-
-
-
-
-
-
-
-
-

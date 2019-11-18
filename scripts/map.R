@@ -27,22 +27,3 @@ NYC_map<-leaflet(data = locations) %>%
         stroke = FALSE,     # remove the outline from each circle
         
         )
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
