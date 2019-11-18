@@ -1,10 +1,7 @@
 library("dplyr")
 
 data_df <- read.csv("data/AB_NYC_2019.csv",stringsAsFactors = FALSE)
-<<<<<<< HEAD:Summary_Info.R
-View(data_df)
-=======
->>>>>>> 905c6b8e9c165ce600937c4eac41ff8141d38487:scripts/Summary_Info.R
+
 
 # The Variable for Summary Information.
 
