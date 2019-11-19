@@ -1,6 +1,6 @@
 ---
 title: "Midpoint Deliverable"
-author: "Snehal S, Bernard L, Valerie T, Sasha G, Lewis."
+author: "Snehal S, Valerie T, Lewis L."
 date: "11/14/2019"
 output: html_document
 ---
@@ -29,7 +29,7 @@ The NYC dataset has over **`r nrows`** observations recording over **`r ncol`** 
 
 ## Summary Table
 
-This table investigates and compares how the average Airbnb listing information such as price, number of minimum nights required, and room availability out of 365 days compares between different NYC neighborhoods. In order to make this comparison, the listing was grouped by neighborhoods.
+This table investigates and compares how the average Airbnb listing information such as price, number of minimum nights required, and room availability out of 365 days, compares between different NYC neighborhoods. In order to make this comparison, the listing was grouped by neighborhoods.
 
 ```{r echo=FALSE}
 kable(aggregate_table,
