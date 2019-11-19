@@ -15,6 +15,9 @@ source("scripts/bar_graph.R")
 
 ```
 
+# Summary Information
+
+
 ## Introduction
 
 - The purpose of this project is to evaluate how Airbnb listing information compares within NYC. Since Airbnb is gaining marketshare in the tourist accommodation market, which has been dominated by hotels, hostels, and motels in the past, and pricing have changed overtime, our group believes it is important to find the impact Airbnb will have on the future.
@@ -72,6 +75,11 @@ NYC_map
 ```
 
 **Insights:**
+
+- It appeats that houses closer to a coast or near central NY appear to dominate the map. Perhaps because people are attracted to the view.
+
+- The popup labels reveal that house prices in densely populated Airbnb markets, *on average*, are much higher compared to regions with fewer Airbnb houses for guests.
+>>>>>>> 6be1c0b4affc438e1f5356e940b0c8470146c1f4
 
 - It appears that houses closer to a coast or near central NY appear to dominate the map. Perhaps because people are attracted to the view.
 - The popup labels reveal that house prices in densely populated Airbnb markets, *on average*, are much higher compared to regions with fewer Airbnb houses for guests.
