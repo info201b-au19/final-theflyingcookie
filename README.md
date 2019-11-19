@@ -1,5 +1,5 @@
 # INFO201FinalProject
-Final INFO 201 Project: Ziyang Liu, Snehal Shokeen, & Valerie Tse
+Final INFO 201 Project: Ziyang Liu, Sasha Gordin, Snehal Shokeen, & Valerie Tse
 
 ## DOMAIN OF CHOICE: Airbnb
 
