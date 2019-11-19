@@ -7,7 +7,7 @@ library("knitr")
 
 data_df <-read.csv("data/AB_NYC_2019.csv",stringsAsFactors = FALSE)
 
-
+# Adding some parameters (such as labels,radius, latitude) for maps to display.
 locations <- data.frame(
   radius = (100), #(data_df$num_killed + data_df$num_injured)*
   label = paste("Room Type: \n",data_df$room_type,"  <br> Price:",data_df$price,sep=""),
@@ -15,7 +15,8 @@ locations <- data.frame(
   longitude = data_df$longitude
  )
 
-
+# generates the map, setting location to New York and 
+# incorporating the previously created parameters.
 NYC_map<-leaflet(data = locations) %>% 
    addProviderTiles("CartoDB.Positron") %>%
    setView(lat = 40.747231,lng = -73.893146,zoom = 10.0) %>% # focus on Seattle
