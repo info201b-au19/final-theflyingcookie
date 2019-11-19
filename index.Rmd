@@ -74,7 +74,8 @@ avg_price_bar_graph
 ```
 
 **Insights:**
-
+- The neighborhood that on average is the most expensive to rent on Airbnb is Manhattan with an average of about *$200* per night. 
+- The rest of the neighborhoods seem to cost almost half as much with an average of about *$100* per night. This may be due to the fact that Manhattan is a more populated area.
 
 ### Chart Map
 
