@@ -1,8 +1,10 @@
 # A table of  aggregated data (e.g., that has been "grouped" by one of your features)
 library("dplyr")
 
+# Pulling data set
 data_df <-read.csv("data/AB_NYC_2019.csv",stringsAsFactors = FALSE)
 
+# Creating aggregate table which groups by neighborhood group
 aggregate_table <- 
   summarize(
     group_by(data_df, neighbourhood_group),
