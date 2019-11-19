@@ -1,13 +1,17 @@
+# Load library
 library("dplyr")
 library("ggplot2")
 library("tidyr")
 
+# Pull in dataset
 data_df <-read.csv("data/AB_NYC_2019.csv",stringsAsFactors = FALSE)
 
+# Counts the number of listings for each neighborhood group
 sorted <- data_df %>%
   group_by(neighbourhood_group) %>%
   tally()
 
+# Creates bar grpah
 bar_graph_NYC <- 
   ggplot(sorted) +
   geom_col(
