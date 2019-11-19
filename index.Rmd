@@ -1,6 +1,6 @@
 ---
 title: "Midpoint Deliverable"
-author: "Snehal S, Valerie T, Lewis L."
+author: "Snehal S, Valerie T, Lewis L, Sasha G."
 date: "11/14/2019"
 output: html_document
 ---
