@@ -2,8 +2,8 @@ library(shiny)
 library("dplyr")
 library("rsconnect")
 
-source("ui.R")
-source("server.R")
+source("../FinalDeliverable/ui.R")
+source("../FinalDeliverable//server.R")
 
 
 rsconnect::deployApp('../FinalDeliverable/')

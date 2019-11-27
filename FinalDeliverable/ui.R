@@ -16,7 +16,7 @@ library("leaflet")
 library("knitr")
 
 
-data_df <-read.csv("../data/AB_NYC_2019.csv",stringsAsFactors = FALSE)
+data_df <-read.csv("AB_NYC_2019.csv",stringsAsFactors = FALSE)
 
 
 title <- tabPanel(
