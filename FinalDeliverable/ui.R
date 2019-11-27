@@ -16,6 +16,8 @@ library("leaflet")
 library("knitr")
 
 
+data_df <-read.csv("../data/AB_NYC_2019.csv",stringsAsFactors = FALSE)
+
 
 title <- tabPanel(
     "Title Page", 
@@ -71,22 +73,35 @@ page_one <- tabPanel(
 )
 
 page_two <- tabPanel(
-    "Second Page" ,
-    titlePanel("Page 2"), 
+    "Map" ,
+    titlePanel("Map"), 
     
     
     sidebarLayout(
         sidebarPanel(
             # Wideget 1: first state for comparison
             selectInput(
-                inputId = "pieStateInput",
-                label = "Select a state you would like to explore",
-                choices = c("snail","nail","ail")
+                inputId = "mapFeature",
+                label = "Select a feature you would like to explore",
+                choices = colnames(data_df)
+            ),
+            
+            sliderInput(
+                inputId = "mapSlider",
+                label = "Select radius size",
+                min = 50,
+                max = 200,
+                step = 10,
+                value = 100
             )
+            
         ),
         mainPanel(
-            h3("Header size 3 here "),
-            p("blah blah blah blah blah"),
+            h2("New York City, 2019"),
+            p("This interactive map pinpoints every house that was hosted on the Airbnb website in New York City in 2019.
+              Select a feature and click on any point on the map to see the feature-value for that paticular house."),
+            leafletOutput(outputId = "map"),
+            p("(You're looking at over 48,000 data points, so it may take a second to laod)")
             
         )
     )
