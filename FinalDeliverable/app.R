@@ -1,11 +1,13 @@
-library(shiny)
-library("dplyr")
-library("rsconnect")
+# Loads required libraries
+library("shiny")
+library(rsconnect)
 
-source("../FinalDeliverable/ui.R")
-source("../FinalDeliverable//server.R")
+# Defines the UI value and server functions
+source("app_ui.R")
+source("app_server.R")
 
-
-rsconnect::deployApp('../FinalDeliverable/')
-
+# Runs the shinyApp() application
 shinyApp(ui = ui, server = my_server)
+
+
+#rsconnect::deployApp('../FinalDeliverable/')
