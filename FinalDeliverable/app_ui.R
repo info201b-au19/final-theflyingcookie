@@ -20,27 +20,12 @@ data_df <-read.csv("AB_NYC_2019.csv",stringsAsFactors = FALSE)
 
 
 title <- tabPanel(
-    "Title Page", 
-    titlePanel("Title"), 
-    
-    
+    "Overview", 
+    titlePanel("Overview of Project"), 
     sidebarLayout(
         sidebarPanel(
             # A static content element: a 2nd level header that displays text
-            h2("Greetings from Shiny"),
-            
-            # A widget: a text input box (save input in the `username` key)
-            textInput(inputId = "username", label = "What is your name?"),
-            
-            # An output element: a text output (for the `message` key)
-            textOutput(outputId = "message"),
-            # Widget 1: first page feature selection.
-            
-            selectInput(
-                inputId = "selectedInput",
-                label = "Select the feature you would like to explore",
-                choices = c("snail","nail","ail")
-            ),
+            h2("Questions Our Project Investigated"),
             
         ),
         mainPanel(
@@ -107,14 +92,55 @@ page_two <- tabPanel(
     )
 )
 
+page_three<- tabPanel(
+    "Third Page" ,
+    titlePanel("Page 3"), 
+    
+    
+    sidebarLayout(
+        sidebarPanel(
+            # Wideget 1: first state for comparison
+            selectInput(
+                inputId = "pieStateInput",
+                label = "Select a state you would like to explore",
+                choices = c("snail","nail","ail")
+            )
+        ),
+        mainPanel(
+            h3("Header size 3 here "),
+            p("blah blah blah blah blah"),           
+        )
+    )
+)
 
+summary <- tabPanel(
+    "Summary" ,
+    titlePanel("Summary Takeaways"), 
+    
+    
+    sidebarLayout(
+        sidebarPanel(
+            # Wideget 1: first state for comparison
+            selectInput(
+                inputId = "pieStateInput",
+                label = "Select a state you would like to explore",
+                choices = c("snail","nail","ail")
+            )
+        ),
+        mainPanel(
+            h3("Header size 3 here "),
+            p("blah blah blah blah blah"),           
+        )
+    )
+)
 
 ui <- navbarPage(
     "My Application", 
     title,         
     page_one,
-    page_two
-    
+    page_two,
+    page_three,
+    summary
 )
 
 
