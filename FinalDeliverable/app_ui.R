@@ -92,23 +92,26 @@ page_two <- tabPanel(
     )
 )
 
-page_three<- tabPanel(
-    "Third Page" ,
-    titlePanel("Page 3"), 
-    
+page_three <- tabPanel(
+    "Bar Graph" ,
+    titlePanel("Bar Graph"), 
     
     sidebarLayout(
         sidebarPanel(
             # Wideget 1: first state for comparison
             selectInput(
-                inputId = "pieStateInput",
-                label = "Select a state you would like to explore",
-                choices = c("snail","nail","ail")
-            )
+                inputId = "barFeature",
+                label = "Select a feature you would like to explore",
+                choices = c("num_listings", "avg_price")
+            ),
+            
         ),
         mainPanel(
-            h3("Header size 3 here "),
-            p("blah blah blah blah blah"),           
+            h2("New York City, 2019"),
+            p("This bar graph shows us the average price per Airbnb and the 
+              number of listings for each neighbourhood group in New York City."
+            ),
+            plotOutput(outputId = "barGraph")
         )
     )
 )

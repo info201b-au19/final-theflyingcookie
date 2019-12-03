@@ -54,6 +54,21 @@ my_server <- function(input, output) {
         NYC_maps
         
     })
+    
+    output$barGraph <- renderPlot({
+        ggplot(combined_data, aes(neighbourhood_group, combined_data[[input$barFeature]])) +
+            geom_col() +
+            theme(plot.title = element_text(hjust = 0.5)) +
+            theme(axis.title.x = element_text(size = 16),
+                  axis.title.y = element_text(size = 16),
+                  title = element_text(size = 17)
+            ) +
+            labs(
+                title = paste0(input$barFeature, " per Neighbourhood Group"),
+                x = "Neighbourhood Group",
+                y = input$barFeature
+            )
+    })
 }
 
 
