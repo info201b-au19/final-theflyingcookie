@@ -65,7 +65,7 @@ page_one <- tabPanel(
     
     sidebarLayout(
         sidebarPanel(
-            # Wideget 1: first state for comparison
+            # Wideget 1: the neighbourhood the user want to explore.
             selectInput(
                 inputId = "pieNeighbourhoodInput",
                 label = "Select a neighbourhood you would like to explore",
@@ -87,13 +87,13 @@ page_two <- tabPanel(
     
     sidebarLayout(
         sidebarPanel(
-            # Widget 1: first state for comparison
+            # Widget 1: The feature the user want to explore.
             selectInput(
                 inputId = "mapFeature",
                 label = "Select a feature you would like to explore",
                 choices = colnames(data_df)
             ),
-            
+            # Widget 2: The size of the dots.
             sliderInput(
                 inputId = "mapSlider",
                 label = "Select radius size",
@@ -121,7 +121,7 @@ page_three <- tabPanel(
     
     sidebarLayout(
         sidebarPanel(
-            # Widget 1: first state for comparison
+            # Widget 1: The feature the user want to explore.
             selectInput(
                 inputId = "barFeature",
                 label = "Select a feature you would like to explore",
@@ -142,10 +142,11 @@ page_three <- tabPanel(
 summary <- tabPanel(
     "Summary" ,
     titlePanel("Summary Takeaways"), 
+
     mainPanel(
         tableOutput("table"),
         h3("Header size 3 here "),
-        p("blah blah blah blah blah"),           
+        p("blah blah blah blah blah")         
     )
 )
 

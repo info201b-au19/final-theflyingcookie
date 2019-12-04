@@ -54,10 +54,12 @@ my_server <- function(input, output) {
         
     })
     
+    #Get disired data from the dataset.
     sorted <- data_df %>%
         group_by(neighbourhood_group) %>%
         summarise(num_listings = n())
     
+    #Get disired data from the dataset.
     averaged <- data_df %>%
         group_by(neighbourhood_group) %>%
         mutate(avg_price = round(mean(price), 2)) 
@@ -67,6 +69,7 @@ my_server <- function(input, output) {
     combined_data <- left_join(sorted, averaged, by = "neighbourhood_group")
     
     
+    #Generate the bar chart.
     output$barGraph <- renderPlotly({
         p <- ggplot(combined_data, aes(neighbourhood_group, 
                                        combined_data[[input$barFeature]], 
@@ -89,24 +92,24 @@ my_server <- function(input, output) {
     
     output$pie <- renderPlotly({
         
-        #Colors needed for the chart
+        #Colors needed for the chart.
         mycols <- c("#0073C2FF", "#EFC000FF", "#CD534CFF")
         
         neighbourhood_choice <- input$pieNeighbourhoodInput
         
-        #Get the disired data based on the user choice
+        #Get the disired data based on the user choice.
         room_types <- filter(data_df, neighbourhood_group == neighbourhood_choice)
         room_types <- group_by(room_types, room_type) %>%
             tally() %>%
             arrange(desc(room_type)) %>%
             mutate(prop = round(n / sum(n), 3) * 100)
         
-        #Create the chart
+        #Create the pie chart.
         p <- plot_ly(room_types, labels = ~room_type, values = ~n,
                      type = "pie",
                      marker = list(colors = mycols)
                      ) %>%
-            layout(title = "NYC Airbnb rooms by type",
+            layout(title = paste0("NYC Airbnb rooms by type in ", input$pieNeighbourhoodInput, " neighbourhood"),
                    xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
                    yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
         p
