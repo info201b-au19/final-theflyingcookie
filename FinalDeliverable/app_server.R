@@ -8,8 +8,6 @@ library("knitr")
 
 data_df <-read.csv("AB_NYC_2019.csv",stringsAsFactors = FALSE)
 
-
-
 my_server <- function(input, output) {
     # Assign a value to the `message` key in the `output` list using
     # the renderText() method, creating a value the UI can display
@@ -54,6 +52,19 @@ my_server <- function(input, output) {
         NYC_maps
         
     })
+    
+    sorted <- data_df %>%
+        group_by(neighbourhood_group) %>%
+        summarise(num_listings = n())
+    
+    averaged <- data_df %>%
+        group_by(neighbourhood_group) %>%
+        mutate(avg_price = round(mean(price), 2)) 
+    
+    averaged <- averaged[!duplicated(averaged$avg_price), ]
+    
+    combined_data <- left_join(sorted, averaged, by = "neighbourhood_group")
+    
     
     output$barGraph <- renderPlot({
         ggplot(combined_data, aes(neighbourhood_group, combined_data[[input$barFeature]])) +
