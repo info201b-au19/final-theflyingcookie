@@ -14,6 +14,7 @@ library("ggmap")
 library("mapproj")
 library("leaflet")
 library("knitr")
+library("plotly")
 
 
 data_df <-read.csv("AB_NYC_2019.csv",stringsAsFactors = FALSE)
@@ -111,7 +112,7 @@ page_three <- tabPanel(
             p("This bar graph shows us the average price per Airbnb and the 
               number of listings for each neighbourhood group in New York City."
             ),
-            plotOutput(outputId = "barGraph")
+            plotlyOutput(outputId = "barGraph")
         )
     )
 )

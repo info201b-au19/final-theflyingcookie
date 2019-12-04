@@ -5,6 +5,7 @@ library("ggmap")
 library("mapproj")
 library("leaflet")
 library("knitr")
+library("plotly")
 
 data_df <-read.csv("AB_NYC_2019.csv",stringsAsFactors = FALSE)
 
@@ -66,8 +67,10 @@ my_server <- function(input, output) {
     combined_data <- left_join(sorted, averaged, by = "neighbourhood_group")
     
     
-    output$barGraph <- renderPlot({
-        ggplot(combined_data, aes(neighbourhood_group, combined_data[[input$barFeature]])) +
+    output$barGraph <- renderPlotly({
+        p <- ggplot(combined_data, aes(neighbourhood_group, 
+                                       combined_data[[input$barFeature]], 
+                                       text = paste0(input$barFeature, ": ", combined_data[[input$barFeature]]))) +
             geom_col() +
             theme(plot.title = element_text(hjust = 0.5)) +
             theme(axis.title.x = element_text(size = 16),
@@ -78,7 +81,9 @@ my_server <- function(input, output) {
                 title = paste0(input$barFeature, " per Neighbourhood Group"),
                 x = "Neighbourhood Group",
                 y = input$barFeature
-            )
+            ) 
+        p <- ggplotly(p, tooltip = "text")
+        p
     })
 }
 
