@@ -87,27 +87,29 @@ my_server <- function(input, output) {
     })
     
     
-    output$pie <- renderPlot({
+    output$pie <- renderPlotly({
         
+        #Colors needed for the chart
         mycols <- c("#0073C2FF", "#EFC000FF", "#CD534CFF")
         
-        room_types <- data_df %>%
-            group_by(room_type) %>%
+        neighbourhood_choice <- input$pieNeighbourhoodInput
+        
+        #Get the disired data based on the user choice
+        room_types <- filter(data_df, neighbourhood_group == neighbourhood_choice)
+        room_types <- group_by(room_types, room_type) %>%
             tally() %>%
             arrange(desc(room_type)) %>%
             mutate(prop = round(n / sum(n), 3) * 100)
         
-        nyc_pie <- ggplot(room_types, aes(x = 2, y = n, fill = room_type)) +
-            geom_bar(width = 1, stat = "identity", color = "white") +
-            coord_polar("y", start = 0) +
-            scale_fill_manual(values = mycols) +
-            theme_void() +
-            xlim(0.5, 2.5) +
-            labs(
-                title = "NYC Airbnb rooms by type",
-                fill = "Room Types"
-            )
-        nyc_pie
+        #Create the chart
+        p <- plot_ly(room_types, labels = ~room_type, values = ~n,
+                     type = "pie",
+                     marker = list(colors = mycols)
+                     ) %>%
+            layout(title = "NYC Airbnb rooms by type",
+                   xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+                   yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+        p
     })
 }
 
