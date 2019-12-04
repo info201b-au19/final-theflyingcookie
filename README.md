@@ -1,7 +1,7 @@
 # INFO201FinalProject
 Final INFO 201 Project: Ziyang Liu, Sasha Gordin, Snehal Shokeen, & Valerie Tse
 
-Link to Shinyapp: https://sashagordin.shinyapps.io/FinalDeliverable/
+Link to Shinyapp: https://theflyingcookie.shinyapps.io/FinalDeliverable/
 
 ## DOMAIN OF CHOICE: Airbnb
 
