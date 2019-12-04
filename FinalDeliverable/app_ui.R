@@ -146,5 +146,3 @@ ui <- navbarPage(
     summary
 )
 
-
-
