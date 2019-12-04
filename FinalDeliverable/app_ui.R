@@ -1,12 +1,3 @@
-#
-# This is the user-interface definition of a Shiny web application. You can
-# run the application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
-
 library(shiny)
 library("dplyr")
 library("ggplot2")
@@ -16,9 +7,7 @@ library("leaflet")
 library("knitr")
 library("plotly")
 
-
 data_df <-read.csv("AB_NYC_2019.csv",stringsAsFactors = FALSE)
-
 
 title <- tabPanel(
     "Overview", 
@@ -57,21 +46,21 @@ title <- tabPanel(
     )
 )
 
-
 page_one <- tabPanel(
     "Pie Graph" ,
     titlePanel("Pie Graph"), 
     
-    
     sidebarLayout(
+        # Widget and Sidebar Content
         sidebarPanel(
-            # Wideget 1: the neighbourhood the user want to explore.
+            # Widget: the neighbourhood the user want to explore.
             selectInput(
                 inputId = "pieNeighbourhoodInput",
                 label = "Select a neighbourhood you would like to explore",
                 choices = unique(data_df$neighbourhood_group)
             )
         ),
+        # Pie Graph 
         mainPanel(
             h2("New York City, 2019"),
             p("This pie chart shows us the percentage of different types of rooms by neigourhood in NYC"),
@@ -84,8 +73,8 @@ page_two <- tabPanel(
     "Map" ,
     titlePanel("Map"), 
     
-    
     sidebarLayout(
+        # Widget and Sidebar Content
         sidebarPanel(
             # Widget 1: The feature the user want to explore.
             selectInput(
@@ -104,13 +93,13 @@ page_two <- tabPanel(
             )
             
         ),
+        # Map
         mainPanel(
             h2("New York City, 2019"),
             p("This interactive map pinpoints every house that was hosted on the Airbnb website in New York City in 2019.
               Select a feature and click on any point on the map to see the feature-value for that paticular house."),
             leafletOutput(outputId = "map"),
             p("(You're looking at over 48,000 data points, so it may take a second to laod)")
-            
         )
     )
 )
@@ -120,6 +109,7 @@ page_three <- tabPanel(
     titlePanel("Bar Graph"), 
     
     sidebarLayout(
+        # Widget and Sidebar Content
         sidebarPanel(
             # Widget 1: The feature the user want to explore.
             selectInput(
@@ -127,8 +117,8 @@ page_three <- tabPanel(
                 label = "Select a feature you would like to explore",
                 choices = c("num_listings", "avg_price")
             ),
-            
         ),
+        # Bar Chart
         mainPanel(
             h2("New York City, 2019"),
             p("This bar graph shows us the average price per Airbnb and the 
@@ -142,7 +132,7 @@ page_three <- tabPanel(
 summary <- tabPanel(
     "Summary" ,
     titlePanel("Summary Takeaways"), 
-
+    # Table of Takeaways
     mainPanel(
         tableOutput("table"),
         h3("Header size 3 here "),
@@ -150,6 +140,7 @@ summary <- tabPanel(
     )
 )
 
+# Application Layout
 ui <- navbarPage(
     "My Application", 
     title,         
