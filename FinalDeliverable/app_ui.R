@@ -46,15 +46,15 @@ page_one <- tabPanel(
         sidebarPanel(
             # Wideget 1: first state for comparison
             selectInput(
-                inputId = "pieStateInput",
+                inputId = "pieNeighbourhoodInput",
                 label = "Select a neighbourhood you would like to explore",
                 choices = unique(data_df$neighbourhood_group)
             )
         ),
         mainPanel(
-            h3("Header size 3 here "),
-            p("blah blah blah blah blah"),
-            plotOutput("pie")
+            h2("New York City, 2019"),
+            p("This pie chart shows us the percentage of different types of rooms by neigourhood in NYC"),
+            plotlyOutput("pie")
         )
     )
 )
