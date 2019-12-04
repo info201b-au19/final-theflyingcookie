@@ -8,4 +8,3 @@ source("app_server.R")
 
 # Runs the shinyApp() application
 shinyApp(ui = ui, server = my_server)
-
