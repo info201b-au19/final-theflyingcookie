@@ -142,21 +142,10 @@ page_three <- tabPanel(
 summary <- tabPanel(
     "Summary" ,
     titlePanel("Summary Takeaways"), 
-    
-    
-    sidebarLayout(
-        sidebarPanel(
-            # Wideget 1: first state for comparison
-            selectInput(
-                inputId = "pieStateInput",
-                label = "Select a state you would like to explore",
-                choices = c("snail","nail","ail")
-            )
-        ),
-        mainPanel(
-            h3("Header size 3 here "),
-            p("blah blah blah blah blah"),           
-        )
+    mainPanel(
+        tableOutput("table"),
+        h3("Header size 3 here "),
+        p("blah blah blah blah blah"),           
     )
 )
 

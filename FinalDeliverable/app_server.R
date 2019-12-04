@@ -111,6 +111,23 @@ my_server <- function(input, output) {
                    yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
         p
     })
+    
+    output$table <- renderTable({
+        
+        aggregate_table <- 
+            summarize(
+                group_by(data_df, neighbourhood_group),
+                average_price = round(mean(price, na.rm = FALSE), digits = 2),
+                average_min_nights_req = round(mean(minimum_nights, na.rm = FALSE), digits = 1),
+                average_avail_nights = round(mean(availability_365, na.rm = FALSE), digits = 1)
+            ) %>%
+            rename(
+                "Neighborhood Area" = neighbourhood_group,
+                "Average Price for a Room ($ USD)" = average_price,
+                "Average Minimum of Nights Required for a Room" = average_min_nights_req,
+                "Average Room Availability out of 365 Days (Days)" = average_avail_nights
+            )
+    })
 }
 
 
