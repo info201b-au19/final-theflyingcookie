@@ -22,14 +22,19 @@ data_df <-read.csv("AB_NYC_2019.csv",stringsAsFactors = FALSE)
 
 title <- tabPanel(
     "Overview", 
-    titlePanel("Overview of Project"), 
+    titlePanel("Overview of Project - Airbnb Listings in New York City"), 
     sidebarLayout(
         sidebarPanel(
             # A static content element: a 2nd level header that displays text
             h2("Questions Our Project Investigated"),
-            p()
             
+            HTML('<li>How do the types of different rooms for Airbnb listings in New York City compare?</li>'),
+            HTML('<li>How are Airbnb-hosted houses in New York City geographically distributed?</li>'),
+            HTML('<li>How does the average cost of an Airbnb listing vary depending on the neighborhood?</li>'),
+            HTML('<li>How does the price of Airbnb listings in certain neighborhood groups in New York City compare?</li>'),
+            HTML('<li>How does the minimum number of nights required for a Airbnb listing in certain neighborhood groups in New York City compare?</li>')
         ),
+        
         mainPanel(
             h3("Introduction to the Project"),
             p("The purpose of this project is to evaluate how Airbnb listing information compares within NYC.
