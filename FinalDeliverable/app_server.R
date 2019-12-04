@@ -85,6 +85,30 @@ my_server <- function(input, output) {
         p <- ggplotly(p, tooltip = "text")
         p
     })
+    
+    
+    output$pie <- renderPlot({
+        
+        mycols <- c("#0073C2FF", "#EFC000FF", "#CD534CFF")
+        
+        room_types <- data_df %>%
+            group_by(room_type) %>%
+            tally() %>%
+            arrange(desc(room_type)) %>%
+            mutate(prop = round(n / sum(n), 3) * 100)
+        
+        nyc_pie <- ggplot(room_types, aes(x = 2, y = n, fill = room_type)) +
+            geom_bar(width = 1, stat = "identity", color = "white") +
+            coord_polar("y", start = 0) +
+            scale_fill_manual(values = mycols) +
+            theme_void() +
+            xlim(0.5, 2.5) +
+            labs(
+                title = "NYC Airbnb rooms by type",
+                fill = "Room Types"
+            )
+        nyc_pie
+    })
 }
 
 

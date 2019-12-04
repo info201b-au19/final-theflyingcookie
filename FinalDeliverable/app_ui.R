@@ -38,8 +38,8 @@ title <- tabPanel(
 
 
 page_one <- tabPanel(
-    "First Page" ,
-    titlePanel("Page 1"), 
+    "Pie Graph" ,
+    titlePanel("Pie Graph"), 
     
     
     sidebarLayout(
@@ -47,13 +47,14 @@ page_one <- tabPanel(
             # Wideget 1: first state for comparison
             selectInput(
                 inputId = "pieStateInput",
-                label = "Select a state you would like to explore",
-                choices = c("snail","nail","ail")
+                label = "Select a neighbourhood you would like to explore",
+                choices = unique(data_df$neighbourhood_group)
             )
         ),
         mainPanel(
             h3("Header size 3 here "),
-            p("blah blah blah blah blah"),           
+            p("blah blah blah blah blah"),
+            plotOutput("pie")
         )
     )
 )
